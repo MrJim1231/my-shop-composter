@@ -1,0 +1,129 @@
+/* Основные стили для контейнера и карточек */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки на больших экранах */
+  gap: 20px;
+  min-height: 400px; /* Фиксируем пространство для предотвращения скачков */
+}
+
+/* Карточки */
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.categoryItem:hover {
+  transform: scale(1.05);
+}
+
+.categoryImage {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: #f0f0f0; /* Фон на случай задержки загрузки */
+}
+
+/* Для имени категории */
+.categoryName {
+  padding-top: 10px;
+  font-size: 1.2rem; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  color: #333; /* Цвет текста, контрастный для лучшей читаемости */
+  margin-bottom: 15px; /* Отступ снизу */
+  text-align: center; /* Выравнивание по центру */
+}
+
+/* 🔥 Скелетон для плавной загрузки */
+.skeletonItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  height: 320px;
+}
+
+.skeletonImage {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 10px;
+}
+
+.skeletonText {
+  width: 60%;
+  height: 20px;
+  margin-top: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+
+/* Для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки на мобильных */
+  }
+
+  /* Уменьшаем padding внутри карточек */
+  .categoryItem {
+    padding: 10px;
+  }
+
+  .categoryImage {
+    max-width: 200px;
+    height: 200px;
+  }
+}
+
+/* Для экранов меньше 485px */
+@media (max-width: 485px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки на экранах меньше 485px */
+  }
+
+  .categoryItem {
+    padding: 8px;
+  }
+
+  .categoryImage {
+    max-width: 150px;
+    height: 150px;
+  }
+}

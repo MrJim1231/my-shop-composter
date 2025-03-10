@@ -1,0 +1,146 @@
+/* Основные стили для контейнера и карточек */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loading,
+.noProducts {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки на больших экранах */
+  gap: 20px;
+  min-height: 400px; /* Фиксируем пространство для предотвращения скачков */
+}
+
+.productItem {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productItem:hover {
+  transform: scale(1.05);
+}
+
+.productLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.productImage {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover; /* Обеспечивает красивый вид изображений */
+  aspect-ratio: 1/1; /* Фиксирует пропорции */
+  background-color: #f0f0f0; /* Фоновый цвет, пока изображение не загрузится */
+}
+
+/* Для имени продукта */
+.productName {
+  padding-top: 10px;
+  font-size: 1.2rem; /* Размер шрифта */
+  font-weight: bold; /* Жирный шрифт */
+  color: #333; /* Цвет текста, контрастный для лучшей читаемости */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+.productPrice {
+  font-weight: bold;
+  margin-top: 10px; /* Больше пространства между ценой и названием */
+}
+
+/* 🔥 Скелетон для плавной загрузки */
+.skeletonItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  height: 320px;
+}
+
+.skeletonImage {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 10px;
+}
+
+.skeletonText {
+  width: 60%;
+  height: 20px;
+  margin-top: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Адаптивные стили для мобильных устройств */
+
+/* Для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки на экранах меньше 768px */
+  }
+
+  .productImage {
+    max-width: 200px; /* Уменьшаем размер изображения */
+    height: 200px;
+  }
+
+  .productItem {
+    padding: 10px; /* Уменьшаем паддинг карточек */
+  }
+}
+
+/* Для экранов меньше 485px */
+@media (max-width: 485px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* 1 карточка на экранах меньше 485px */
+  }
+
+  .productItem {
+    padding: 8px; /* Еще меньше паддинг */
+  }
+
+  .productImage {
+    max-width: 150px; /* Уменьшаем размер изображения */
+    height: 150px;
+  }
+
+  .productPrice {
+    font-size: 14px; /* Уменьшаем размер шрифта для цены */
+  }
+}

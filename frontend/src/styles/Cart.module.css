@@ -1,0 +1,129 @@
+/* cart.module.css */
+
+.cart {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cartItemImage {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cartItem div {
+  flex: 1;
+}
+
+.cartItem h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cartItem p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрируем элементы */
+  width: 120px;
+  margin-top: 10px;
+}
+
+.decreaseButton,
+.increaseButton {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 12px; /* Уменьшаем отступы для кнопок */
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.decreaseButton:hover,
+.increaseButton:hover {
+  background-color: #ddd;
+}
+
+.quantityControl button {
+  margin: 0 10px; /* Отступ между кнопками */
+}
+
+.removeButton {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}
+
+.cartSummary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.checkoutButton {
+  background-color: #27ae60;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.checkoutButton:hover {
+  background-color: #2ecc71;
+}
+
+.cartItem button:disabled {
+  cursor: not-allowed;
+  background-color: #ddd;
+}
+
+.cartSummary p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+}
